@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title></title>
+</head>
+<body>
+    <h1>Ola mundo</h1>
+    <p>Curso de JS</p>
+    <script>
+     var n1 = Number.parseInt(window.prompt('Digite um numero'))
+     var n2 = Number.parseInt(window.prompt('Digite outro numero')) 
+     
+     //Number.parseInt é usado para converter a resposta do prompt em um numero inteiro, caso contrário ele seria tratado como texto e a soma resultaria em concatenação, float é usado para numeros decimais. e number é usado para ambos os casos, inteiro e decimal.
+
+     var s = n1 + n2
+     window.alert('a soma entre os dois e, '+ s)
+
+     // ou da pra usar template string, que é uma forma mais moderna de concatenar strings e variáveis, usando crase e ${} para inserir a variável dentro da string.
+
+     window.alert(`a soma de ${n1} e ${n2}  e, ${s}`)
+    </script>
+</body>
+</html>
