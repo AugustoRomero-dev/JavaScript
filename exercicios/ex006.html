@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Eventos DOM</title>
+    <style>
+        div#area{
+            font-family: Georgia, 'Times New Roman', Times, serif;
+            height: 200px;
+            width: 200px;
+            background-color: green;
+            color: white;
+            line-height: 200px;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <div id="area" onclick="clicar()" onmouseenter="entrou()" onmouseout="saiu()" > 
+        interaja...
+    </div>
+
+     <script>
+         // se a variavel fica fora ela serve pra geral
+         var a = document.getElementById('area')
+         a.addEventListener('click', clicar) // essa linha serve ao inves de usar la em cima o onclick na div
+         
+         a.addEventListener('mouseenter', entrou)
+         a.addEventListener('mouseout', saiu)
+
+        function clicar() {
+                var a = document.getElementById('area')
+                a.innerText = 'clicou'
+                a.style.background = 'red'
+            }
+            function entrou(){
+                a.innerText = 'entrou'
+            }
+            function saiu(){
+                a.innerText = 'saiu'
+            }
+        </script>
+</body>
+</html>
