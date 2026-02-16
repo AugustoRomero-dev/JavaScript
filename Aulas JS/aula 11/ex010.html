@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Sistema de Aprovado/Reprovado</h1>
+    <input type="number" name="numero" id="numero">
+    <input type="button" value="boletim" onclick="boletim()">
+    <div id="res">Digite sua nota!</div>
+    <script>
+       function boletim() {
+            var n = document.getElementById('numero');
+            var res = document.getElementById('res');
+            var n = Number(numero.value);
+            if (n >=7){
+              res.innerHTML = 'Aprovado!' 
+              res.style.color = ' green' 
+            } else if (n == 6){
+                res.innerHTML = 'Recuperacao!'
+                res.style.color = 'yellow'
+            } else if (n == 0) {
+                res.innerHTML = 'Digite sua Nota!'
+                res.style.color = 'red'
+            } else{
+                res.innerHTML = 'Reprovado!'
+                res.style.color = 'red'
+            }
+        }
+
+    </script>
+</body>
+</html>
