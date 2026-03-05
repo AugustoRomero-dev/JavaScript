@@ -1,0 +1,23 @@
+:root{
+    
+}
+*{
+    padding: 0px;
+    margin: 0px;
+}
+body{
+    background-color: #7663F2;
+}
+h1{
+    text-align: center;
+    color: white;
+}
+div{
+    background-color: white;
+    width: 400px;
+    height: 150px;
+    
+    margin: auto;
+    
+    
+}
