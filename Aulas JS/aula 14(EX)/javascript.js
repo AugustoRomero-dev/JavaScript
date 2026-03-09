@@ -1,14 +1,25 @@
 function verificar(){
-    var ini = document.getElementById(ini)
-    var fim = document.getElementById(ifim)
-    var pass = document.getElementById(ipasso)
-    var res = document.getElementById(res)
-    if(ini == 0 && fim == 0 & pass == 0){
-        alert('Digite um numero')
+    let ini = document.getElementById('ini')
+    let fim = document.getElementById('ifim')
+    let pass = document.getElementById('ipasso')
+    let res = document.getElementById('res')
+    if ( ini.value.length == 0 || fim.value.length == 0  || pass.value.length == 0 ){
+        window.alert('erro')
+    } else {
+        res.innerHTML = 'contando'
+        let i =Number(ini.value)
+        let f =Number(fim.value)
+        let p =Number(pass.value)
+        if( i < f){
+            for(let c = i; c <= f; c += p){
+            res.innerHTML += `${c} `
+            }
+        } else {
+            for(let c = i; c >= f; c -= p ){
+                res.innerHTML += `${c} `
+            }
+        }
+    
     }
 
 }
-//recer inicio
-//recerber fim
-//receber passo
-//

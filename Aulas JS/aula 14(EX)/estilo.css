@@ -13,7 +13,9 @@ section{
     border-radius: 10px;
     
 }
-
+div#res{
+    padding: 10px;
+}
 footer{
     text-align: center;
     color: white;
