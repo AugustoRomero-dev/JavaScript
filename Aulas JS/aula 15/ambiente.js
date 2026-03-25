@@ -8,5 +8,6 @@ console.log(`o primeiro vetor e ${num[0]}`)
 
 let pos = num.indexOf(8)
 let antes = num.indexOf(6)
-console.log(`o valor 8 esta na posicao ${pos}`)
+console.log(`o valor 1 esta na posicao ${pos}`)
 console.log(`o valor 6 esta na posicao ${antes}`)
+console.log(num[5])
