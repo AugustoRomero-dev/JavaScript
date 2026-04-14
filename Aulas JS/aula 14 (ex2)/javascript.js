@@ -4,7 +4,7 @@ function verificar(){
     let pass = document.getElementById('ipasso')
     let res = document.getElementById('res')
     if ( ini.value.length == 0 || fim.value.length == 0  || pass.value.length == 0 ){
-        window.alert('erro')
+        window.alert('ERRO< DIGITE UM NMR')
     } else {
         res.innerHTML = 'contando'
         let i =Number(ini.value)
