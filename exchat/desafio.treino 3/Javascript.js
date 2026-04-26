@@ -30,21 +30,38 @@ function Finalizar(){
     
 
 
-    PrimeiroN = NumerosGeral[0]
+    let PrimeiroMaaior = NumerosGeral[0]
+    let PrimeiroMenor = NumerosGeral[0]
+    let SonaNum = 0
 
     for(let maior of NumerosGeral){ // maior numero
-      if(maior > PrimeiroN){
-        PrimeiroN = maior
+      if(maior > PrimeiroMaaior){
+        PrimeiroMaaior = maior
        
       } 
       
     }
     for(let menor of NumerosGeral){ // menor numero
-      if(menor < PrimeiroN){
-        PrimeiroN = menor
+      if(menor < PrimeiroMenor){
+        PrimeiroMenor = menor
        
       } 
     } 
+    for(let soma of NumerosGeral){ // soma dos numeros
+      SonaNum += soma
+      
+    }
+    
+    media = SonaNum / NumerosGeral.length // calcula media
+    
+    
+    res.innerHTML = ''
+    res.innerHTML += `Maior número: ${PrimeiroMaaior} <br>`
+    res.innerHTML += `Menor número: ${PrimeiroMenor} <br>`
+    res.innerHTML += `Soma: ${SonaNum} <br>`
+    res.innerHTML += `Média: ${media} <br>`
+    
+   
     
     
  
