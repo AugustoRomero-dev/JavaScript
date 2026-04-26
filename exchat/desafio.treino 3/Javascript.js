@@ -13,6 +13,12 @@ function Adicionar(){
         return
         
       }
+      if(n < 1 || n > 100){
+        alert('ADICIONE UM NUM ENTRE 1 E 100')
+        return
+        
+      }
+      
       
       NumerosGeral.push(n)
       numero.value = ''// limpa
@@ -51,7 +57,7 @@ function Finalizar(){
       SonaNum += soma
       
     }
-    
+    // nao precisa de tudo isso de loop
     media = SonaNum / NumerosGeral.length // calcula media
     
     
