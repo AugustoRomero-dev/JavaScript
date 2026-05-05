@@ -39,9 +39,4 @@ function renderizar(){
 
     
     contador.textContent = `Você tem ${lista.length} tarefa`
-<<<<<<< HEAD
-    //deu errado
-=======
-    // deu certo
->>>>>>> fac5ed19fd60137e826d697989807cf0a98e14c2
 }
