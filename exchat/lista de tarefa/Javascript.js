@@ -39,4 +39,4 @@ function renderizar(){
 
     
     contador.textContent = `Você tem ${lista.length} tarefa`
-}//testando
+}//testando pc agora
