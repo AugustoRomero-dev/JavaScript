@@ -2,6 +2,7 @@ let lista = []
 
 function Adicionar(){
     let tarefa = document.getElementById("tarefa")
+
     let texto = tarefa.value
 
     if(texto.length === 0){
