@@ -20,7 +20,7 @@ function Adicionar(){
     renderizar()
 }
 function renderizar(){
-<<<<<<< HEAD
+
     let inputLista = document.getElementById('lista')
     let contador = document.getElementById("contador")
 
@@ -36,23 +36,4 @@ function renderizar(){
     });     
     contador.textContent = `Você tem ${lista.length} tarefa`
 }
-=======
-    let listaHTML = document.getElementById('lista')
-    let contador = document.getElementById('contador')
 
-    listaHTML.innerHTML = ''
-
-    lista.forEach(function(tarefa, posicao){
-        let item = document.createElement('li')
-        item.textContent = tarefa
-
-        item.onclick = function(){
-            lista.splice(posicao, 1)
-            renderizar()
-        }
-        listaHTML.appendChild(item)
-    });
-     contador.textContent = `Você tem ${lista.length} tarefa`
-
-} // foi
->>>>>>> 86c9b52096376202861bf67e44e41350bc09bf02
