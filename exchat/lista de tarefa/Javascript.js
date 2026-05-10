@@ -37,3 +37,4 @@ function renderizar(){
     contador.textContent = `Você tem ${lista.length} tarefa`
 }
 
+//teste
