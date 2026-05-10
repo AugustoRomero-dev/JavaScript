@@ -1,3 +1,5 @@
+
+
 let lista = []
 
 function Adicionar(){
@@ -15,28 +17,19 @@ function Adicionar(){
 
     renderizar()
 }
-
 function renderizar(){
-    let listaHTML = document.getElementById("lista")
+    let inputLista = document.getElementById('lista')
     let contador = document.getElementById("contador")
 
-    listaHTML.innerHTML = ''
-
-   lista.forEach(function(tarefa, posicao){
-        let item = document.createElement('li')
-        item.textContent = tarefa
-
-        item.onclick = function(){
-            lista.splice(posicao, 1)
-            
+    inputLista.innerHTML = ""
+    lista.forEach(function(item, posiçao){
+        let li = document.createElement("li")
+        li.textContent = tarefa
+        li.onclick = function(){
+            lista.splice(posiçao, 1)
             renderizar()
-
-            
         }
-        listaHTML.appendChild(item)
-   });
-
-
-    
+        inputLista.appendChild(li)
+    });     
     contador.textContent = `Você tem ${lista.length} tarefa`
-}//testando pc agora
+}
