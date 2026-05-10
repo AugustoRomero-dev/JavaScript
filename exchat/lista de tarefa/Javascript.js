@@ -1,42 +1,38 @@
 let lista = []
 
 function Adicionar(){
-    let tarefa = document.getElementById("tarefa")
+    const input = document.getElementById('tarefa')
+    const ValorInput = input.value
 
-    let texto = tarefa.value
-
-    if(texto.length === 0){
-        alert('Adicione uma tarefa')
+    if(ValorInput.length === 0){
+        alert('DIGITE UM NMR')
         return
     }
-
-    lista.push(texto)
-    tarefa.value = ''
-
+    if(lista.includes(ValorInput)){
+        alert('ESTA ATIVIDADE JA EXYISTE')
+        return
+    }
+    lista.push(ValorInput)
+    
+    input.value = ""
     renderizar()
 }
-
 function renderizar(){
-    let listaHTML = document.getElementById("lista")
-    let contador = document.getElementById("contador")
+    let listaHTML = document.getElementById('lista')
+    let contador = document.getElementById('contador')
 
     listaHTML.innerHTML = ''
 
-   lista.forEach(function(tarefa, posicao){
+    lista.forEach(function(tarefa, posicao){
         let item = document.createElement('li')
         item.textContent = tarefa
 
         item.onclick = function(){
             lista.splice(posicao, 1)
-            
             renderizar()
-
-            
         }
         listaHTML.appendChild(item)
-   });
+    });
+     contador.textContent = `Você tem ${lista.length} tarefa`
 
-
-    
-    contador.textContent = `Você tem ${lista.length} tarefa`
-}//testando pc agora
+}
