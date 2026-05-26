@@ -5,35 +5,33 @@ function Adicionar() {
     const valorInput = input.value // Pega o valor digitado no input
 
     if (valorInput.length === 0) { // Verifica se o input está vazio
-        alert('DIGITE UMA TAREFA') // Mostra alerta
-        return // Para a execução da função
+        alert('DIGITE UMA TAREFA') 
+        return 
     }
 
     if (lista.includes(valorInput)) { // Verifica se a tarefa já existe
-        alert('ESTA ATIVIDADE JÁ EXISTE') // Mostra alerta
-        return // Interrompe a função
+        alert('ESTA ATIVIDADE JÁ EXISTE') 
+        return 
     }
 
     lista.push(valorInput) // Adiciona a tarefa no array
 
     input.value = "" // Limpa o input depois de adicionar
 
-    renderizar() // Atualiza a lista na tela
+    renderizar() 
 }
 function renderizar() {
     let inputLista = document.getElementById('lista') // Pega a lista no HTML
-    let contador = document.getElementById("contador") // Pega o contador
-
+    let contador = document.getElementById("contador") 
     inputLista.innerHTML = "" // Limpa a tela para evitar duplicação
-
     lista.forEach(function(item, posicao) { // Percorre cada item do array
         let li = document.createElement("li") // Cria um elemento <li>
 
         li.textContent = item // Coloca o texto da tarefa no <li>
 
         li.onclick = function() { // Executa ao clicar na tarefa
-            lista.splice(posicao, 1) // Remove 1 item da posição clicada
-            renderizar() // Atualiza a tela
+            li.textContent = "✔ " + item
+            
         }
 
         inputLista.appendChild(li) // Adiciona o <li> na lista do HTML
