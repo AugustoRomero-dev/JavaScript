@@ -15,3 +15,20 @@ const nome = nomes.filter(function(grande){
     return grande.length > 4
 })
 console.log(nome)
+
+
+const mais = numeros.filter(function(maior){
+    return maior > 10
+})
+console.log(mais)
+
+const pessoas = [
+    { nome: "João", idade: 15 },
+    { nome: "Maria", idade: 22 },
+    { nome: "Pedro", idade: 17 },
+    { nome: "Ana", idade: 30 }
+]
+const demaior = pessoas.filter(function(item){
+    return item.idade > 18
+})
+console.log(demaior)
