@@ -80,3 +80,45 @@ const pro100 = produtos100
         premium: true
     }))
     console.log(pro100)
+
+    "..............."
+
+
+const loginsUsu = [
+    { nome: "Augusto", email: "augusto@gmail.com", senha: "1234" },
+    { nome: "Pedro", email: "pedro@gmail.com", senha: "abcd" },
+    { nome: "Maria", email: "maria@gmail.com", senha: "9999" }
+]    
+const usuarioWoman = loginsUsu.find(item => item.email === "maria@gmail.com" && 
+    item.senha === "9999" )
+    if(usuarioWoman){
+        console.log('login Realizado')
+    } else {
+        console.log("Email ou senha incorretos")
+    }
+
+ "..............."
+
+const usuariosTrue = [
+    { nome: "João", admin: false },
+    { nome: "Maria", admin: false },
+    { nome: "Pedro", admin: true }
+]
+const admin = usuariosTrue.some(item => item.admin === true)
+console.log(admin)
+
+"..............."
+
+const alunosMdia = [
+    { nome: "Ana", nota: 8 },
+    { nome: "Carlos", nota: 4 },
+    { nome: "Pedro", nota: 6 },
+    { nome: "Maria", nota: 10 }
+]
+const maior6 = alunosMdia
+    .filter(item => item.nota >= 6)
+    .map(item => ({
+        nome: item.nome,
+        resultado: 'passou'
+    }))
+    console.log(maior6)
