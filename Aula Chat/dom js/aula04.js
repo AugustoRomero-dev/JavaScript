@@ -17,15 +17,21 @@ botao.addEventListener('click', () =>{
             return
         }
 
+     tarefas.forEach((item, posicso) =>{
+         const li = document.createElement("li")
+        li.textContent = tarefa.value
 
-    const li = document.createElement("li")
-    li.textContent = tarefa.value
+        listaUL.appendChild(li)
+        tarefas.push(tarefa.value)
 
-    listaUL.appendChild(li)
-    tarefas.push(tarefa.value)
+        tarefa.value = ''
 
-    tarefa.value = ''
-      
+            li.addEventListener("click", ()=>{
+                tarefas.splice(posicao, 1)
+                renderizar()
+            })
+     })
+  
        
         
 })
