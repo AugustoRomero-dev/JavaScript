@@ -26,15 +26,15 @@ function renderizar(){
     arrayTarefa.forEach((item, posicao) =>{
         const li = document.createElement('li')
         li.textContent = item
-        
-
-        li.addEventListener('click', ()=>{
-            arrayTarefa.splice(posicao, 1)
-            renderizar()
-        })
+        li.dataset.id = posicao
         listaUL.appendChild(li)
-        res.innerHTML = `Vc pososui ${arrayTarefa.length} tarefa`
     })
-   
 
+    res.innerHTML = `Vc pososui ${arrayTarefa.length} tarefa`
 }
+
+listaUL.addEventListener('click', (event)=>{
+    const posicaoClicada = event.target.dataset.id
+    arrayTarefa.splice(posicaoClicada, 1)
+    renderizar()
+})
