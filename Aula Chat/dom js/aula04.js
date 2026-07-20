@@ -38,3 +38,9 @@ function renderizar(){
 
     })
 }
+
+
+
+
+ const posicaoClicada = event.target.dataset.id
+    arrayTarefa[posicaoClicada].concluida = true

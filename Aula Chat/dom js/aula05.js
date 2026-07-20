@@ -15,7 +15,7 @@ botao.addEventListener('click', ()=>{
         return
     }
 
-    arrayTarefa.push(tarefas.value)
+    arrayTarefa.push({texto:tarefas.value, concluida:false})
     tarefas.value = ''
 
     renderizar()
@@ -23,18 +23,35 @@ botao.addEventListener('click', ()=>{
 
 function renderizar(){
     listaUL.innerHTML = ''
-    arrayTarefa.forEach((item, posicao) =>{
-        const li = document.createElement('li')
-        li.textContent = item
-        li.dataset.id = posicao
-        listaUL.appendChild(li)
-    })
+            arrayTarefa.forEach((item, posicao) =>{
+                const li = document.createElement('li')
+                li.textContent = item.texto
+                li.dataset.id = posicao
+                listaUL.appendChild(li)
+
+                // botao de apagar
+                const lixeira = document.createElement('BUTTON')
+                lixeira.textContent = 'apagar'
+                li.appendChild(lixeira)
+                //
+
+                if(item.concluida === true){
+                    li.style.textDecoration = 'line-through'
+                }
+            })
+    
 
     res.innerHTML = `Vc pososui ${arrayTarefa.length} tarefa`
 }
 
-listaUL.addEventListener('click', (event)=>{
+listaUL.addEventListener('click', (event) => {
     const posicaoClicada = event.target.dataset.id
-    arrayTarefa.splice(posicaoClicada, 1)
+
+    if (event.target.tagName === 'BUTTON') {
+        arrayTarefa.splice(posicaoClicada, 1)
+    } else {
+        arrayTarefa[posicaoClicada].concluida = !arrayTarefa[posicaoClicada].concluida
+    }
+
     renderizar()
 })
