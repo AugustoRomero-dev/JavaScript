@@ -8,6 +8,9 @@
 
     // seu código vai aqui embaixo
     listaLuzes.addEventListener('click', (event)=>{
-        const posicaoClicada = event.target.data.id 
-        
+        const posicaoClicada = event.target.dataset.id 
+        //if(estadoLuzes[posicaoClicada].ligada = false){
+            estadoLuzes[posicaoClicada].ligada = !estadoLuzes[posicaoClicada].ligada
+        //} nao precisa do if, so inverter a posicao
+        console.log(estadoLuzes)
     })
