@@ -21,9 +21,15 @@ let itens = [
         listaUL.appendChild(li)
       })
 
-      // item.length. quantidade
+       resumo.textContent = ` vc tem ${itens.length}`
     }
 
-    // seu addEventListener vai aqui
-
-    renderizar()
+    listaUL.addEventListener("click", (event)=>{
+      const posicaoClicada = event.target.dataset.id
+      if(event.target.tagName === "BUTTON"){
+          itens.splice(posicaoClicada, 1)
+      }
+      renderizar()
+    })
+  renderizar()
+  
