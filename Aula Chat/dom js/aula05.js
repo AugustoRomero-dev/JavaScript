@@ -15,7 +15,7 @@ botao.addEventListener('click', ()=>{
         return
     }
 
-    arrayTarefa.push({texto:tarefas.value, concluida:false})
+    arrayTarefa.push({texto: tarefas.value, concluida: false})
     tarefas.value = ''
 
     renderizar()
@@ -23,35 +23,32 @@ botao.addEventListener('click', ()=>{
 
 function renderizar(){
     listaUL.innerHTML = ''
-            arrayTarefa.forEach((item, posicao) =>{
-                const li = document.createElement('li')
-                li.textContent = item.texto
-                li.dataset.id = posicao
-                listaUL.appendChild(li)
+    arrayTarefa.forEach((item, posicao)=>{
+        const li = document.createElement('li')
+         li.textContent = item.texto
+         li.dataset.id = posicao
+         listaUL.appendChild(li)
 
-                // botao de apagar
-                const lixeira = document.createElement('BUTTON')
-                lixeira.textContent = 'apagar'
-                li.appendChild(lixeira)
-                //
+         const remover = document.createElement('BUTTON')
+         remover.textContent = 'remover'
+         li.appendChild(remover)
 
-                if(item.concluida === true){
-                    li.style.textDecoration = 'line-through'
-                }
-            })
-    
-
-    res.innerHTML = `Vc pososui ${arrayTarefa.length} tarefa`
+         if(item.concluida === true){
+             li.style.textDecoration = 'line-through'
+         }
+        
+    })
+    const novoArray = arrayTarefa.filter(item => item.concluida === false)
+    res.innerHTML = `Voce tem ${novoArray.length} tarefa pendente`
 }
 
-listaUL.addEventListener('click', (event) => {
+listaUL.addEventListener('click', (event)=>{
     const posicaoClicada = event.target.dataset.id
-
-    if (event.target.tagName === 'BUTTON') {
+    if(event.target.tagName === 'BUTTON'){
         arrayTarefa.splice(posicaoClicada, 1)
-    } else {
+    } else{
         arrayTarefa[posicaoClicada].concluida = !arrayTarefa[posicaoClicada].concluida
     }
-
     renderizar()
 })
+    
