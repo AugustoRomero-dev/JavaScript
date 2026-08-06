@@ -10,6 +10,7 @@ async function buscarAlbuns() {
              throw new Error('Nenhuma tarefa encontrada para esse usuário')
         }
         const dadoNovo = dado.filter(item => item.title.length > 20)
+        console.log(dadoNovo.length)
         console.log(dadoNovo)
 
     } catch(erro){
