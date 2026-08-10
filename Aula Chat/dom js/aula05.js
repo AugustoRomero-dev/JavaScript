@@ -5,6 +5,8 @@ const res = document.getElementById('res')
 
 let arrayTarefa = []
 
+
+
 botao.addEventListener('click', ()=>{
     if(tarefas.value.trim() === ''){
         alert('Digite uma tarefa')
@@ -15,7 +17,7 @@ botao.addEventListener('click', ()=>{
         return
     }
 
-    arrayTarefa.push({texto: tarefas.value, concluida: false})
+    arrayTarefa.push({texto: item.title, concluida: item.completed})
     tarefas.value = ''
 
     renderizar()
@@ -52,3 +54,22 @@ listaUL.addEventListener('click', (event)=>{
     renderizar()
 })
     
+async function carregarTarefasDaApi() {
+  try {
+    const resposta = await fetch('https://jsonplaceholder.typicode.com/users/1/todos')
+    if (!resposta.ok) {
+      throw new Error('Não foi possível carregar as tarefas')
+    }
+    const dado = await resposta.json()
+
+    dado.forEach(item => {
+      arrayTarefa.push({texto: item.title, concluida: item.completed})
+    })
+
+    renderizar()
+  } catch (erro) {
+    console.log(erro.message)
+  }
+}
+
+carregarTarefasDaApi()
