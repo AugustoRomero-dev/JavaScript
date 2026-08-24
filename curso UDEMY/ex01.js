@@ -11,17 +11,29 @@ function escopo() {
 
         const nome = document.getElementById('nome')
         const Sobrenome = document.getElementById('Sobrenome')
-        const nome = document.getElementById()
-        const nome = document.getElementById()
+        const Peso = document.getElementById('Peso')
+        const Altura = document.getElementById('Altura')
+        const botao = document.getElementById('botao')
+
+
+        pessoas.push({
+            nome: nome.value,
+            sobrenome: Sobrenome.value,
+            peso: Peso.value,
+            Altura: Altura.value
+        })
+
+        console.log(pessoas)
+
+        resultado.innerHTML = `${nome.value} ${Sobrenome.value} ${Peso.value} ${Altura.value}`
+
+            
+        
+
+        
 
     }
 
     form.addEventListener('submit', recebeEvento)
-
-
-
-
-
-
-
 }
+escopo()
