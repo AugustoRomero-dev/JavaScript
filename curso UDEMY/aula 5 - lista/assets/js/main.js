@@ -1,3 +1,5 @@
+
+
 const input = document.querySelector('.tarefa-texto')
 const botaoAdd = document.querySelector('.botao')
 const listaUL = document.querySelector('.tarefas')
@@ -10,6 +12,7 @@ function criaTarefa(textInput) {
     const li = document.createElement('li')
     li.innerText = textInput
     listaUL.appendChild(li)
+    return li
 }
 
 function adicionaArray(inputArray) {
@@ -19,17 +22,30 @@ function adicionaArray(inputArray) {
 
 }
 
+function botaoApagar(listaComBotao){
+    const botao = document.createElement('button')
+    botao.innerText = 'apagar'
+    listaComBotao.appendChild(botao)
 
+    botao.addEventListener('click', function(){
+        arrayTarefa.forEach((item, posicao) =>{
+            posicao = listaComBotao
+            listaComBotao.splice(posicao, 1)
+        })
+    })
+
+}
 botaoAdd.addEventListener('click', function(evento){
     if(input.value === '') {
         alert('Digite uma tarefa')
         return
         
     }
-    criaTarefa(input.value);
+    let li = criaTarefa(input.value);
     adicionaArray(input.value)
+    botaoApagar(li)
 
-    console.log(arrayTarefa)
+    
 
 
     
