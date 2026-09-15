@@ -17,6 +17,7 @@ function criaTarefa(textInput) {
 
 function adicionaArray(inputArray) {
     arrayTarefa.push(inputArray)
+    console.log(arrayTarefa)
 
     input.value = ''
 
@@ -28,11 +29,13 @@ function botaoApagar(listaComBotao){
     listaComBotao.appendChild(botao)
 
     botao.addEventListener('click', function(){
-        listaComBotao.remove
-        // arrayTarefa.forEach((item, posicao) =>{
-        //     posicao = listaComBotao
-        //     listaComBotao.splice(posicao, 1)
-        // })
+        let posicao = arrayTarefa.indexOf(listaComBotao.innerText)
+         arrayTarefa.splice(posicao, 1)
+         listaComBotao.remove()
+        //  arrayTarefa.forEach((item, indice) =>{
+        //     let posicao = indice
+        //     arrayTarefa.splice(indice, 1)
+        //  })
     })
 
 }
