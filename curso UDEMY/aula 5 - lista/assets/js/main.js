@@ -28,10 +28,11 @@ function botaoApagar(listaComBotao){
     listaComBotao.appendChild(botao)
 
     botao.addEventListener('click', function(){
-        arrayTarefa.forEach((item, posicao) =>{
-            posicao = listaComBotao
-            listaComBotao.splice(posicao, 1)
-        })
+        listaComBotao.remove
+        // arrayTarefa.forEach((item, posicao) =>{
+        //     posicao = listaComBotao
+        //     listaComBotao.splice(posicao, 1)
+        // })
     })
 
 }
