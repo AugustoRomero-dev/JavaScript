@@ -8,7 +8,7 @@ function criaPessoa(nome, sobrenome, a, p) {
     get nomeCompleto () {
         return `${this.nome } ${this.sobrenome}`
     }, 
-    //tem osetter q nao sei fazer
+    //tem osetter q nao sei fazer 
     // 'this' aqui se refere ao próprio objeto criado (ex: p1)
     fala(assunto) {
       return `${this.nome} está ${assunto}.`;
