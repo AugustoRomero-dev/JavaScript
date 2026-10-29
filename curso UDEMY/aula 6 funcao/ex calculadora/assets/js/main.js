@@ -158,15 +158,56 @@ function criaCalculadora02 (){
 
     this.inicia02 = () => {
         this.pegaClique()
+        this.pegaEnter()
 
     }
 
-    this.pegaClique = () =>{
-        document.addEventListener('click', e=>{
-            
+    this.pegaEnter = () =>{
+        document.addEventListener('keyup', e=>{
+             if(e.keyCode === 13) this.fazConta()
+        
         })
     }
-}
+    this.pegaClique = () =>{
+        document.addEventListener('click', e=>{
+            const el = e.target
+
+            if(el.classList.contains('btn-num')) this.adicionaDisplay(el)
+            if(el.classList.contains('btn-del'))  this.apagaNum()
+            if(el.classList.contains('btn-num-Clear')) this.apagaTudo()
+            if(el.classList.contains('btn-eq')) this.fazConta()  
+        })
+    }
+
+    this.adicionaDisplay = el =>{
+        this.display.value += el.innerText
+    }
+
+
+    this.apagaNum = () =>{
+         this.display.value = this.display.value.slice(0, -1)
+    }
+    this.apagaTudo = () =>{
+        this.display.value = ''
+    }
+    this.fazConta = () =>{
+        try {
+            const conta = eval(this.display.value)
+
+            if(!conta) {
+                alert('Conta invalida')
+                return
+            }
+
+            this.display.value = conta
+        } catch (error) {
+                alert('Conta invalida')
+                
+            }
+
+        }
+    }
+
 
 
 
